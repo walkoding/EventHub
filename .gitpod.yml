@@ -1,4 +1,8 @@
+image: gitpod/workspace-postgres
 tasks:
+    - name: create tables in db
+      command: './init-db.sh'
+
     - name: run back-end
       openMode: split-left
       command: |
@@ -23,3 +27,7 @@ ports:
       port: 3001
       onOpen: ignore
       visibility: public
+
+    - name: database
+      port: 5432
+      onOpen: ignore
